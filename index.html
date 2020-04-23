@@ -173,12 +173,43 @@
       <div id="test2" class="col s12">Test 2</div>
       <div id="test3" class="col s12">Test 3</div>
       <div id="test4" class="col s12">Test 4</div>
-
+  
+        
+        <div class="carousel carousel-slider">
+      <a class="carousel-item" href="#one!"><img src="images/01.jpg"></a>
+    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" href="#three!"><img src="images/02.jpg"></a>
+    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+  </div>
 
 
       <!--JavaScript at end of body for optimobmized loading-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+      		   <script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelector('.carousel');
+	var options={fullWidth:true,indicators:true};
+    var instances = M.Carousel.init(elems, options);
+	  var elem=document.querySelector('.carousel.carousel-slider');
+
+  var instance = M.Carousel.getInstance(elem);
+  var i=1;
+  function autoplay(){
+  setTimeout(function(){
+  //console.log(instance,elem);
+  instance.next();autoplay();},3000)
+	
+  }
+  autoplay();
+  });
+  
+ 
+
+  </script>      
             
     </body>
   </html>
